@@ -27,9 +27,13 @@ body {
   margin: 0;
   min-height: 100svh;
   background-color: var(--board);
-  background-image: linear-gradient(var(--cell) 1px, transparent 1px),
+  background-image: radial-gradient(circle at 10% 15%, rgba(45, 217, 240, 0.16), transparent 35%),
+    radial-gradient(circle at 90% 20%, rgba(246, 211, 45, 0.14), transparent 35%),
+    radial-gradient(circle at 20% 85%, rgba(177, 78, 224, 0.16), transparent 35%),
+    radial-gradient(circle at 85% 80%, rgba(79, 217, 92, 0.14), transparent 35%),
+    linear-gradient(var(--cell) 1px, transparent 1px),
     linear-gradient(90deg, var(--cell) 1px, transparent 1px);
-  background-size: 28px 28px;
+  background-size: auto, auto, auto, auto, 28px 28px, 28px 28px;
   background-position: center top;
 }
 

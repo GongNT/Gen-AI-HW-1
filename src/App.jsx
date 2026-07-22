@@ -2,6 +2,7 @@ import { useRef, useState } from 'react'
 import YouTubePlayer from './components/YouTubePlayer'
 import WebcamCapture from './components/WebcamCapture'
 import InterviewChat from './components/InterviewChat'
+import TetrisGame from './components/TetrisGame'
 import { extractVideoId, fetchVideoMetadata } from './lib/youtube'
 import {
   evaluateVisualReactions,
@@ -164,6 +165,8 @@ export default function App() {
         </form>
       )}
 
+      {stage === STAGES.INPUT && <TetrisGame />}
+
       {metadata && stage !== STAGES.INPUT && (
         <div className="metadata-card">
           <h2>{metadata.title}</h2>
@@ -216,7 +219,9 @@ export default function App() {
         )}
 
       {stage === STAGES.EVALUATED && (
-        <button onClick={() => setStage(STAGES.INTERVIEW)}>Start Interview</button>
+        <button className="start-interview-btn" onClick={() => setStage(STAGES.INTERVIEW)}>
+          Start Interview
+        </button>
       )}
 
       {stage === STAGES.INTERVIEW && (
@@ -233,6 +238,7 @@ export default function App() {
           <h3>Final Sentiment Report</h3>
           <pre>{finalReport}</pre>
           <button
+            className="download-btn"
             onClick={() =>
               downloadGradingBundle({ metadata, visualEvaluation, finalPrompt, finalReport })
             }
