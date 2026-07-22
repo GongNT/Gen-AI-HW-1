@@ -1,10 +1,26 @@
 :root {
-  color-scheme: light dark;
-  font: 16px/1.5 system-ui, 'Segoe UI', Roboto, sans-serif;
+  --black: #0a0b0d;
+  --black-deep: #050506;
+  --panel: #14161a;
+  --panel-raised: #1b1e24;
+  --blue: #3b82f6;
+  --blue-deep: #1e3a8a;
+  --blue-glow: rgba(59, 130, 246, 0.35);
+  --silver: #c7ccd4;
+  --silver-bright: #eef1f5;
+  --silver-dim: #7d838f;
+  --border: #2a2e37;
+
+  color-scheme: dark;
+  font: 16px/1.5 'Courier New', ui-monospace, Consolas, monospace;
+  color: var(--silver);
+  background: var(--black);
 }
 
 body {
   margin: 0;
+  background: radial-gradient(ellipse at top, #101218 0%, var(--black-deep) 70%);
+  min-height: 100svh;
 }
 
 #root {
