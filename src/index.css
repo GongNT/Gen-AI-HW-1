@@ -1,28 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 :root {
-  --black: #0a0b0d;
-  --black-deep: #050506;
-  --panel: #14161a;
-  --panel-raised: #1b1e24;
-  --blue: #3b82f6;
-  --blue-deep: #1e3a8a;
-  --blue-glow: rgba(59, 130, 246, 0.35);
-  --silver: #c7ccd4;
-  --silver-bright: #eef1f5;
-  --silver-dim: #7d838f;
-  --border: #2a2e37;
+  --board: #0d0f1a;
+  --board-deep: #05060c;
+  --panel: #12142238;
+  --cell: #1a1d2e;
+
+  --cyan: #2dd9f0;
+  --yellow: #f6d32d;
+  --purple: #b14ee0;
+  --green: #4fd95c;
+  --red: #f5473f;
+  --blue: #3a6df0;
+  --orange: #f39c2d;
+
+  --ink: #eef1ff;
+  --ink-dim: #9aa0c2;
 
   color-scheme: dark;
-  font: 16px/1.5 'Courier New', ui-monospace, Consolas, monospace;
-  color: var(--silver);
-  background: var(--black);
+  font: 14px/1.6 'Press Start 2P', ui-monospace, monospace;
+  color: var(--ink);
+  background: var(--board);
 }
 
 body {
   margin: 0;
-  background: radial-gradient(ellipse at top, #101218 0%, var(--black-deep) 70%);
   min-height: 100svh;
+  background-color: var(--board);
+  background-image: linear-gradient(var(--cell) 1px, transparent 1px),
+    linear-gradient(90deg, var(--cell) 1px, transparent 1px);
+  background-size: 28px 28px;
+  background-position: center top;
 }
 
 #root {
   min-height: 100svh;
+}
+
+* {
+  box-sizing: border-box;
 }

@@ -28,6 +28,28 @@ function formatDuration(seconds) {
   return `${m}:${s.toString().padStart(2, '0')}`
 }
 
+function BlockTitle({ text }) {
+  let colorIndex = 0
+  const words = text.split(' ')
+  return (
+    <h1 className="block-title">
+      {words.map((word, wi) => (
+        <span className="block-word" key={wi}>
+          {word.split('').map((char, i) => {
+            const cls = `t-${colorIndex % 7}`
+            colorIndex += 1
+            return (
+              <span key={i} className={cls}>
+                {char}
+              </span>
+            )
+          })}
+        </span>
+      ))}
+    </h1>
+  )
+}
+
 export default function App() {
   const [stage, setStage] = useState(STAGES.INPUT)
   const [url, setUrl] = useState('')
@@ -118,7 +140,7 @@ export default function App() {
   return (
     <div className="app">
       <div className="app-header">
-        <h1>Insight Observer</h1>
+        <BlockTitle text="INSIGHT OBSERVER" />
         {stage !== STAGES.INPUT && (
           <button className="new-search-btn" onClick={handleNewSearch}>
             New Search
