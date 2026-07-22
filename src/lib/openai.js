@@ -1,7 +1,7 @@
 // Thin client-side wrapper around the OpenAI Chat Completions API.
 // Requires VITE_OPENAI_API_KEY in a local .env file (see .env.example).
 
-export const MODEL = 'gpt-5.6'
+export const MODEL = 'gpt-5.6-luna'
 
 const API_URL = 'https://api.openai.com/v1/chat/completions'
 
