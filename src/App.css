@@ -23,6 +23,19 @@
   bottom: 0;
 }
 
+.app-header {
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.new-search-btn {
+  position: absolute;
+  top: 6px;
+  right: 0;
+  padding: 8px 16px;
+  font-size: 0.8rem;
+}
+
 h1 {
   text-align: center;
   text-transform: uppercase;

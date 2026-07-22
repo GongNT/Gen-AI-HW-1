@@ -51,12 +51,31 @@ export default function App() {
       const videoId = extractVideoId(url)
       const meta = await fetchVideoMetadata(videoId)
       setMetadata(meta)
+      setDuration(0)
+      setCurrentTime(0)
+      setFrames([])
+      setVisualEvaluation('')
+      setFinalPrompt('')
+      setFinalReport('')
       setStage(STAGES.WATCHING)
     } catch (err) {
       setError(err.message)
     } finally {
       setLoading(false)
     }
+  }
+
+  function handleNewSearch() {
+    setStage(STAGES.INPUT)
+    setUrl('')
+    setMetadata(null)
+    setError(null)
+    setDuration(0)
+    setCurrentTime(0)
+    setFrames([])
+    setVisualEvaluation('')
+    setFinalPrompt('')
+    setFinalReport('')
   }
 
   async function handleVideoEnded() {
@@ -87,7 +106,14 @@ export default function App() {
 
   return (
     <div className="app">
-      <h1>Insight Observer</h1>
+      <div className="app-header">
+        <h1>Insight Observer</h1>
+        {stage !== STAGES.INPUT && (
+          <button className="new-search-btn" onClick={handleNewSearch}>
+            New Search
+          </button>
+        )}
+      </div>
 
       {error && <p className="error-text">{error}</p>}
 
