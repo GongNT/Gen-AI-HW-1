@@ -15,11 +15,11 @@ export async function downloadGradingBundle({
     'video_metadata.json',
     JSON.stringify(
       {
-        videoId: metadata.videoId,
         title: metadata.title,
-        durationSeconds: metadata.durationSeconds,
+        duration_seconds: metadata.durationSeconds,
         description: metadata.description,
         transcript: metadata.transcript,
+        videoId: metadata.videoId,
       },
       null,
       2
