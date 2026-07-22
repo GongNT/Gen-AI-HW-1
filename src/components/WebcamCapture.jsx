@@ -1,14 +1,14 @@
 import { useEffect, useRef, useState } from 'react'
 
-// Phase 1: capture 15 evenly spaced frames across the first 30 seconds.
-const PHASE1_COUNT = 15
+// Phase 1: capture 10 evenly spaced frames across the first 30 seconds.
+const PHASE1_COUNT = 10
 const PHASE1_WINDOW = 30
 
 // Phase 2 (only if the video runs longer than 30s and the viewer keeps
-// watching): sample every few seconds and keep only the 5 moments with the
+// watching): sample every few seconds and keep only the 10 moments with the
 // biggest frame-to-frame change in the viewer's expression.
 const PHASE2_INTERVAL = 2
-const PHASE2_KEEP = 5
+const PHASE2_KEEP = 10
 const DIFF_W = 32
 const DIFF_H = 24
 
