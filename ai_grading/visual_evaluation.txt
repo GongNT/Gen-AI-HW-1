@@ -1,0 +1,27 @@
+## Viewer reaction over time
+
+### Early viewing: 0–30 seconds
+
+- **~0s:** The viewer appears tired or disengaged, resting their cheek on one hand. Their mouth is neutral and their gaze is directed toward the screen.
+- **~3s:** They sit more upright and remove their hand from their face. The expression remains neutral, with a slightly blank or attentive look.
+- **~7s:** Their hand returns to the side of their face. They look forward with a serious, subdued expression.
+- **~10–17s:** The viewer settles into a sustained resting pose, supporting their cheek with their hand. Their eyes appear somewhat lowered and their mouth remains flat, suggesting boredom, fatigue, or low engagement rather than excitement.
+- **~20s:** A small posture change occurs as they touch or adjust their hair. Their head tilts slightly, but there is no strong facial reaction.
+- **~23–30s:** They move their hand toward the temple/forehead and continue watching. The expression remains largely neutral to mildly weary, with no visible smile, laugh, frown, or surprise.
+
+### Later viewing: 80–92 seconds
+
+- **~80s:** The viewer is still leaning on one hand, with a calm but tired-looking expression. Their gaze remains fixed toward the screen.
+- **~82–84s:** They sit a little more upright and their face becomes more directly visible, but the expression stays neutral and subdued.
+- **~86–88s:** Their hand shifts along the cheek and jaw. This is a minor posture adjustment rather than an emotional change; the mouth remains relaxed and the eyes look somewhat heavy.
+- **~90–92s:** They continue resting their face on their hand. The expression is serious or bored, with no clear positive or negative reaction.
+
+### Final portion: 158–170 seconds
+
+- **~158s:** The clearest late change appears here: the viewer slightly squints and raises one side of the mouth, suggesting a faint smile, smirk, or momentary amusement. It is subtle and does not develop into visible laughter.
+- **~160s:** The expression returns closer to neutral, though the face remains slightly relaxed and attentive.
+- **~170s:** Their mouth is slightly open, possibly indicating a small yawn, exhale, or moment of concentration. The overall expression remains subdued rather than surprised or excited.
+
+## Overall evaluation
+
+Across the sampled frames, the viewer shows **mostly neutral, tired, or mildly bored engagement**. The main changes are posture-related—moving from cheek support to hair or temple touching—rather than strong emotional reactions. The only noticeable positive shift occurs around **~158s**, when a faint squinting smile or smirk appears. There is no clear evidence of sustained smiling, laughter, strong frowning, or surprise.
