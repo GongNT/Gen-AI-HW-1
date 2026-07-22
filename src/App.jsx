@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import YouTubePlayer from './components/YouTubePlayer'
 import WebcamCapture from './components/WebcamCapture'
 import InterviewChat from './components/InterviewChat'
@@ -38,10 +38,17 @@ export default function App() {
   const [duration, setDuration] = useState(0)
   const [currentTime, setCurrentTime] = useState(0)
   const [frames, setFrames] = useState([])
+  const framesRef = useRef([])
+  const metadataRef = useRef(null)
 
   const [visualEvaluation, setVisualEvaluation] = useState('')
   const [finalPrompt, setFinalPrompt] = useState('')
   const [finalReport, setFinalReport] = useState('')
+
+  function handleFramesUpdate(newFrames) {
+    framesRef.current = newFrames
+    setFrames(newFrames)
+  }
 
   async function handleSubmitUrl(e) {
     e.preventDefault()
@@ -50,9 +57,11 @@ export default function App() {
     try {
       const videoId = extractVideoId(url)
       const meta = await fetchVideoMetadata(videoId)
+      metadataRef.current = meta
       setMetadata(meta)
       setDuration(0)
       setCurrentTime(0)
+      framesRef.current = []
       setFrames([])
       setVisualEvaluation('')
       setFinalPrompt('')
@@ -69,9 +78,11 @@ export default function App() {
     setStage(STAGES.INPUT)
     setUrl('')
     setMetadata(null)
+    metadataRef.current = null
     setError(null)
     setDuration(0)
     setCurrentTime(0)
+    framesRef.current = []
     setFrames([])
     setVisualEvaluation('')
     setFinalPrompt('')
@@ -81,7 +92,7 @@ export default function App() {
   async function handleVideoEnded() {
     setStage(STAGES.EVALUATING)
     try {
-      const evaluation = await evaluateVisualReactions(metadata, frames)
+      const evaluation = await evaluateVisualReactions(metadataRef.current, framesRef.current)
       setVisualEvaluation(evaluation)
       setStage(STAGES.EVALUATED)
     } catch (err) {
@@ -163,7 +174,7 @@ export default function App() {
               active={true}
               duration={duration}
               currentTime={currentTime}
-              onFramesUpdate={setFrames}
+              onFramesUpdate={handleFramesUpdate}
             />
           </div>
         </div>
